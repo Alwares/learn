@@ -1,0 +1,18 @@
+﻿@model RestaurantEditViewModel
+
+    <h1>Create</h1>
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        <div>
+            @Html.LabelFor(model=>model.Name)
+            @Html.TextBoxFor(model => model.Name)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.CusineType)
+            @Html.DropDownListFor(m=>m.CusineType,Html.GetEnumSelectList<CusineType>())
+        </div>
+        <div>
+            @Html.ValidationSummary()
+            <input type="submit" value="Save"/>
+        </div>
+    }

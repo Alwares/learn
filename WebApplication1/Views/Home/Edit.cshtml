@@ -1,0 +1,22 @@
+﻿@model RestaurantEditViewModel
+
+<h1>Create</h1>
+<form asp-action="Edit" method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name"/>
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="CusineType"></label>
+        <select asp-for="CusineType" asp-items="@Html.GetEnumSelectList(typeof(CusineType))"></select>
+        <span asp-validation-for="CusineType"></span>
+    </div>
+    <div>
+        
+        @Html.ValidationSummary()
+        <input type="submit" value="Save"/>
+    </div>
+    
+</form>
+    
